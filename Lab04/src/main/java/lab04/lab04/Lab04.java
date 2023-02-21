@@ -58,6 +58,43 @@ public int fib(int n)
 //The time complexity of the Fibonacci algorithm is O(2^n), where n is the input value. 
 //This is because each recursive call to the function creates two new recursive calls, 
 //which results in an exponential increase in the number of function calls.
+
+public static void helloWorld(int n) {
+    if (n > 0) {
+        System.out.println("Hello World");
+        helloWorld(n-1);
+    }
+}
+
+//Function to print "Hello World" n times recursively. 
+//every function call reduces n by 1 untill base case is met.
+
+public static int sumMultiplesOfSeven(int n1, int n2) {
+    if (n2 < n1) {
+        return 0;
+    } else if (n2 % 7 == 0) {
+        return n2 + sumMultiplesOfSeven(n1, n2-7);
+    } else {
+        return sumMultiplesOfSeven(n1, n2-1);
+    }
+}
+//Function to return the sum of all numbers between n1 and n2 that are multiples of 7 using recursion.
+
+public static int binarySearch(int[] arr, int x, int low, int high) {
+    if (low > high) {
+        return -1;
+    }
+    int mid = (low + high) / 2;
+    if (arr[mid] == x) {
+        return mid;
+    } else if (arr[mid] > x) {
+        return binarySearch(arr, x, low, mid-1);
+    } else {
+        return binarySearch(arr, x, mid+1, high);
+    }
+}
+//Function to implement the binary search algorithm recursively
+
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
